@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liantong.integration.mapper.UserMapper">
+    <cache />
+
+    <select id="select" resultMap="result">
+        {"action":"select#{?}"}
+    </select>
+
+    <insert id="insert">
+        {"action":"insert","keyGenerator":"uuid_no_line"}
+    </insert>
+
+
+    <resultMap id="result" type="User" autoMapping="true">
+        <id property="id" column="_ID" />
+        <result property="name" column="NAME" />
+
+    </resultMap>
+</mapper>

@@ -1,0 +1,7 @@
+<dataset>
+	<STUDENT _ID="mmm" NAME="张三" CLASSES_ID="aaa" />
+	<STUDENT _ID="nnn" NAME="李四" CLASSES_ID="aaa" />
+
+	<CLASSES ID="aaa" NAME="001"  />
+	<CLASSES ID="bbb" NAME="002"  />
+</dataset>

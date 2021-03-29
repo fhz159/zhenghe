@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liantong.integration.mapper.ClassesMapper">
+	<cache />
+
+	<select id="select" resultMap="result">
+		{"action":"select#{?}"}
+	</select>
+
+	<select id="selectAll" resultMap="result">
+		{"action":"selectAll"}
+	</select>
+
+	<select id="selectOne" resultMap="result">
+		{"action":"selectOne"}
+	</select>
+
+	<select id="count" resultType="int">
+		{"action":"count"}
+	</select>
+
+	<insert id="insert">
+		{"action":"insert","keyGenerator":"uuid_no_line"}
+	</insert>
+
+	<update id="update">
+		{"action":"update"}
+	</update>
+
+	<update id="updateDirect">
+		update CLASSES set NAME = #{name} where
+		ID = #{id}
+	</update>
+
+	<update id="updateDirectWithoutCache">
+		update CLASSES set NAME =
+		#{name} where ID = #{id}
+	</update>
+
+	<update id="updatePersistent">
+		{"action":"updatePersistent"}
+	</update>
+
+	<delete id="delete">
+		{"action":"delete"}
+	</delete>
+
+	<resultMap id="result" type="Classes" autoMapping="true">
+		<id property="id" column="ID" />
+		<result property="name" column="NAME" />
+		<result property="value" column="VALUE" />
+	</resultMap>
+</mapper>

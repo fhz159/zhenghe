@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liantong.integration.mapper.LookMapper">
+    <cache />
+    <select id="select" resultMap="result">
+        {"action":"select#{?}"}
+    </select>
+
+    <select id="selectOne" resultMap="result">
+        {"action":"selectOne"}
+    </select>
+
+    <insert id="insert">
+        {"action":"insert","keyGenerator":"custom"}
+    </insert>
+
+    <update id="update">
+        {"action":"update"}
+    </update>
+
+    <delete id="delete">
+        {"action":"delete"}
+    </delete>
+
+    <select id="selectAll" resultMap="result">
+        {"action":"selectAll"}
+    </select>
+
+    <select id="count" resultType="int">
+        {"action":"count"}
+    </select>
+
+    <resultMap id="result" type="Look" autoMapping="true">
+        <id property="id" column="ID" />
+        <result property="name" column="NAME" />
+        <result property="sv" column="SV" />
+    </resultMap>
+        </mapper>

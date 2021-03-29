@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="logImpl" value="LOG4J" />
+		<setting name="cacheEnabled" value="false" />
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="aggressiveLazyLoading" value="false" />
+		<setting name="localCacheScope" value="SESSION" />
+		<setting name="autoMappingBehavior" value="PARTIAL" />
+		<setting name="lazyLoadTriggerMethods" value="" />
+		<setting name="multipleResultSetsEnabled" value="true" />
+	</settings>
+	<typeAliases>
+		<package name="indi.mybatis.flying.handlers" />
+		<package name="org.apache.ibatis.type" />
+		<package name="com.liantong.integration.pojo" />
+	</typeAliases>
+	<typeHandlers>
+		<typeHandler handler="indi.mybatis.flying.handlers.BooleanHandler" />
+		<typeHandler handler="indi.mybatis.flying.handlers.AdvancedStringTypeHandler" />
+	</typeHandlers>
+	<plugins>
+		<plugin interceptor="indi.mybatis.flying.interceptors.AutoMapperInterceptor">
+			<property name="dialect" value="mysql" />
+			<property name="logLevel" value="error" />
+		</plugin>
+	</plugins>
+
+</configuration>
